@@ -3,10 +3,10 @@ import 'package:weather_api_app/core/models/weather_model.dart';
 import 'package:weather_api_app/core/network/dio_client.dart';
 import 'package:weather_api_app/core/network/dio_exceptions.dart';
 
-class WeatherRepo {
+class CurrentCityWeatherRepo {
   final DioClient dioClient;
 
-  WeatherRepo({required this.dioClient});
+  CurrentCityWeatherRepo({required this.dioClient});
 
   Future<WeatherResponseModel> getCurrentCityWeather({
     required double lat,

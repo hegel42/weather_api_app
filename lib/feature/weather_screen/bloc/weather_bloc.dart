@@ -18,5 +18,5 @@ class WeatherBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
     });
   }
 
-  final WeatherRepo repo;
+  final CurrentCityWeatherRepo repo;
 }

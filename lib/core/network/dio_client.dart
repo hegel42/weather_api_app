@@ -7,7 +7,7 @@ class DioClient {
     baseUrl: Endpoints.weatherBaseUrl,
     connectTimeout: Endpoints.connectionTimeout,
     receiveTimeout: Endpoints.receiveTimeout,
-    queryParameters: {'api_key': ApiKey.apiKey},
+    queryParameters: {'appid': ApiKey.apiKey},
   );
 
   late final dio = Dio(options)

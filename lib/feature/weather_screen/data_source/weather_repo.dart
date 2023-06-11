@@ -14,7 +14,7 @@ class CurrentCityWeatherRepo {
   }) async {
     try {
       final response = await dioClient.dio.get(
-        'lat=$lat&lon=$lot',
+        'lat=$lat&lon=$lot&units=metric',
       );
 
       final dataJson = response.data;

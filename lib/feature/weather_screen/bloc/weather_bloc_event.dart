@@ -2,4 +2,4 @@ part of 'weather_bloc.dart';
 
 abstract class WeatherBlocEvent {}
 
-class WeatherFetchEvent extends WeatherBlocEvent {}
+class CurrentCityWeatherFetch extends WeatherBlocEvent {}

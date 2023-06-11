@@ -7,6 +7,8 @@ class GeoServices {
   Future<Position> getCurrentLocation() async {
     await Geolocator.checkPermission();
     await Geolocator.requestPermission();
+    Geolocator.getLastKnownPosition();
+    // Geolocator.
     final position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.lowest,
       forceAndroidLocationManager: true,
@@ -17,17 +19,41 @@ class GeoServices {
 
   double randomValue = -1 + Random().nextDouble() * 2;
 
-  Future getAddressFromCoord() async {
-    final location = await getCurrentLocation();
+  Future getNearbyCitiesFromCoord(Position position) async {
+    // final location = await getCurrentLocation();
     try {
       final List<Placemark> currentPlacemarks = await placemarkFromCoordinates(
-        location.latitude,
-        location.longitude,
+        position.latitude,
+        position.longitude,
       );
 
       final List<Placemark> nearbyPlacemarks = await placemarkFromCoordinates(
-        location.latitude + randomValue,
-        location.longitude + randomValue,
+        position.latitude + randomValue,
+        position.longitude + randomValue,
+      );
+
+      final List<Placemark> placemarks = [
+        currentPlacemarks[0],
+        ...nearbyPlacemarks,
+      ];
+
+      return placemarks;
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future getCityFromCoord(Position position) async {
+    // final location = await getCurrentLocation();
+    try {
+      final List<Placemark> currentPlacemarks = await placemarkFromCoordinates(
+        position.latitude,
+        position.longitude,
+      );
+
+      final List<Placemark> nearbyPlacemarks = await placemarkFromCoordinates(
+        position.latitude + randomValue,
+        position.longitude + randomValue,
       );
 
       final List<Placemark> placemarks = [

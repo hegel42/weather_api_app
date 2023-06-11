@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_api_app/feature/cities_weather/cities_weather_screen.dart';
+import 'package:weather_api_app/app/ui_kit/models/app_fonts.dart';
+import 'package:weather_api_app/app/ui_kit/models/color_pallete.dart';
+import 'package:weather_api_app/feature/cities_weather/presentation/cities_weather_screen.dart';
 import 'package:weather_api_app/feature/weather_screen/presentation/weather_screen.dart';
 
 class AppTabBar extends StatelessWidget {
@@ -13,15 +15,40 @@ class AppTabBar extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: Container(
-            color: Colors.green,
+            color: ColorPallete.bgBlue2,
             child: SafeArea(
               child: Column(
                 children: <Widget>[
                   Expanded(child: Container()),
-                  const TabBar(
+                  TabBar(
+                    indicatorColor: ColorPallete.accent,
+                    dividerColor: ColorPallete.accent,
+                    labelColor: ColorPallete.accent,
                     tabs: [
-                      Tab(child: Icon(Icons.abc)),
-                      Tab(child: Icon(Icons.safety_check)),
+                      Tab(
+                        child: Row(
+                          children: [
+                            const Icon(Icons.location_on_outlined),
+                            const SizedBox(width: 8),
+                            Text(
+                              'Local',
+                              style: AppFonts().secText,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Tab(
+                        child: Row(
+                          children: [
+                            const Icon(Icons.wb_twilight),
+                            const SizedBox(width: 8),
+                            Text(
+                              'Global',
+                              style: AppFonts().secText,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -32,7 +59,7 @@ class AppTabBar extends StatelessWidget {
         body: const TabBarView(
           children: <Widget>[
             WeatherScreen(),
-            CitiesWetherScreen(),
+            CitiesWeatherScreen(),
           ],
         ),
       ),

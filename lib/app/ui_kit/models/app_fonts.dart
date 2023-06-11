@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AppFonts {
   TextStyle get header24 => const TextStyle(
@@ -13,6 +13,7 @@ class AppFonts {
         fontSize: 40,
         height: 1.2,
         fontFamily: 'Montserrat',
+        color: Colors.yellowAccent,
       );
 
   TextStyle get mainText => const TextStyle(

@@ -1,5 +1,7 @@
-import 'package:weather_api_app/core/models/weather_model.dart';
+// ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:weather_api_app/core/models/weather_model.dart';
 
 part 'weather_state.freezed.dart';
 

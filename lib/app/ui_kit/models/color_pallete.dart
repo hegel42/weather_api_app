@@ -6,21 +6,13 @@ class ColorPallete {
   static Color get white => const Color(0xFFFFFFFF);
   //rgb(246,69,39)
 
-  static Color get accent => const Color(0xFFF64527);
+  static Color get accent => const Color.fromARGB(255, 245, 149, 4);
 
-  static Color get orange => const Color(0xfff97337);
+  static Color get bgBlue1 => const Color.fromARGB(255, 63, 143, 219);
 
-  static Color get darkBlue => const Color(0xff103f90);
+  static Color get bgBlue2 => const Color.fromARGB(255, 18, 70, 119);
 
-  static Color get lightBlue => const Color(0xff35b6e9);
+  static Color get yellow => const Color.fromARGB(255, 238, 238, 3);
 
-  static Color get bgBlue1 => const Color(0xff3f7cb4);
-
-  static Color get bgBlue2 => const Color(0xff148ed6);
-
-  static Color get silver => const Color(0xFFA8A8A8);
-
-  static Color get darkGrey => const Color(0xFFA8A8A8);
-
-  static Color get backGround => const Color(0xFFFAFDF3);
+  static Color get lightBlue => const Color.fromARGB(255, 54, 184, 236);
 }

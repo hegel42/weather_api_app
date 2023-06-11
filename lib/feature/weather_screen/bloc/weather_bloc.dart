@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_api_app/feature/geo_services/geo_services.dart';
+import 'package:weather_api_app/core/geo_services/geo_services.dart';
 import 'package:weather_api_app/feature/weather_screen/bloc/weather_state.dart';
 import 'package:weather_api_app/feature/weather_screen/data_source/weather_repo.dart';
 
@@ -17,7 +17,6 @@ class WeatherBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
             lat: position.latitude,
             lot: position.longitude,
           );
-          final addresses = await GeoServices().getNearbyCitiesFromCoord(position);
 
           emit(
             WeatherBlocState.success(
@@ -26,7 +25,6 @@ class WeatherBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
           );
         } catch (e) {
           emit(WeatherBlocState.error(errorMessage: e.toString()));
-          print(e);
         }
       },
     );

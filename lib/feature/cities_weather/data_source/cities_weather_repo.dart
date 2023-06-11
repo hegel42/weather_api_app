@@ -3,18 +3,17 @@ import 'package:weather_api_app/core/models/weather_model.dart';
 import 'package:weather_api_app/core/network/dio_client.dart';
 import 'package:weather_api_app/core/network/dio_exceptions.dart';
 
-class CurrentCityWeatherRepo {
+class CitiesWeatherRepo {
   final DioClient dioClient;
 
-  CurrentCityWeatherRepo({required this.dioClient});
+  CitiesWeatherRepo({required this.dioClient});
 
-  Future<WeatherResponseModel> getCurrentCityWeather({
-    required double lat,
-    required double lot,
+  Future<WeatherResponseModel> getCitiesWeather({
+    required String cityName,
   }) async {
     try {
       final response = await dioClient.dio.get(
-        'lat=$lat&lon=$lot&units=metric',
+        'q=$cityName&units=metric',
       );
 
       final dataJson = response.data;

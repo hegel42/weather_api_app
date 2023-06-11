@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:math';
 
 import 'package:geocoding/geocoding.dart';
@@ -13,14 +15,15 @@ class GeoServices {
       desiredAccuracy: LocationAccuracy.lowest,
       forceAndroidLocationManager: true,
     );
-    print(position);
+
     return position;
   }
 
+// dont used in app
   double randomValue = -1 + Random().nextDouble() * 2;
 
+  /// dont used in app
   Future getNearbyCitiesFromCoord(Position position) async {
-    // final location = await getCurrentLocation();
     try {
       final List<Placemark> currentPlacemarks = await placemarkFromCoordinates(
         position.latitude,
@@ -44,7 +47,6 @@ class GeoServices {
   }
 
   Future getCityFromCoord(Position position) async {
-    // final location = await getCurrentLocation();
     try {
       final List<Placemark> currentPlacemarks = await placemarkFromCoordinates(
         position.latitude,

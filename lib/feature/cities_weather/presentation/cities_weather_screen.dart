@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_api_app/app/ui_kit/components/weather_icon.dart';
 import 'package:weather_api_app/app/ui_kit/models/app_fonts.dart';
 import 'package:weather_api_app/app/ui_kit/models/color_pallete.dart';
-import 'package:weather_api_app/core/utils/utils.dart';
 import 'package:weather_api_app/feature/cities_weather/bloc/bloc/cities_weather_bloc.dart';
 import 'package:weather_api_app/feature/cities_weather/bloc/bloc/cities_weather_state.dart';
 

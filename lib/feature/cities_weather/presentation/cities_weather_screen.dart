@@ -60,7 +60,7 @@ class CitiesWeatherScreen extends StatelessWidget {
                             // scale: 2,
                           ),
                           Text(
-                            valueConverter(weatherData[0].main?.temp ?? 0, 'C') ?? 'No data',
+                            '${weatherData[index].main?.temp?.toInt() ?? 0} C',
                             style: AppFonts().secText,
                           ),
                         ],

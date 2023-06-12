@@ -28,10 +28,10 @@ class AppTabBar extends StatelessWidget {
                       Tab(
                         child: Row(
                           children: [
-                            const Icon(Icons.location_on_outlined),
+                            const Icon(Icons.wb_twilight),
                             const SizedBox(width: 8),
                             Text(
-                              'Local',
+                              'Global',
                               style: AppFonts().secText,
                             ),
                           ],
@@ -40,10 +40,10 @@ class AppTabBar extends StatelessWidget {
                       Tab(
                         child: Row(
                           children: [
-                            const Icon(Icons.wb_twilight),
+                            const Icon(Icons.location_on_outlined),
                             const SizedBox(width: 8),
                             Text(
-                              'Global',
+                              'Local',
                               style: AppFonts().secText,
                             ),
                           ],
@@ -58,8 +58,8 @@ class AppTabBar extends StatelessWidget {
         ),
         body: const TabBarView(
           children: <Widget>[
-            WeatherScreen(),
             CitiesWeatherScreen(),
+            WeatherScreen(),
           ],
         ),
       ),
